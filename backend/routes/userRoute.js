@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import {UserModel} from '../model/user.js'; // Assuming the schema is in 'models/User.js'
-import userValidationSchema from '../validations/userValidation.js'; // Zod schema
+import userValidationSchema from '../validation/userValidation.js'; // Zod schema
 import { z } from 'zod';
 
 const router = express.Router();

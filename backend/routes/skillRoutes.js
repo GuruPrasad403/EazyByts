@@ -1,6 +1,6 @@
 import express from 'express';
 import Skill from '../model/skill.js'; 
-import { skillValidationSchema } from '../Validations/skillValidation.js'; 
+import { skillValidationSchema } from '../validation/skillValidation.js'; 
 
 const router = express.Router();
 

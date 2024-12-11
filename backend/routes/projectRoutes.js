@@ -1,6 +1,6 @@
 import express from 'express';
 import { ProjectModel } from '../model/project.js'; // Import the Project Model
-import { projectValidationSchema } from '../Validations/projectValidation.js'; // Import the validation schema
+import { projectValidationSchema } from '../validation/projectValidation.js'; // Import the validation schema
 import { authentication } from '../middlewares/authentication.js'; // Assuming you have authentication middleware
 
 const router = express.Router();

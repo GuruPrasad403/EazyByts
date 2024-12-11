@@ -2,7 +2,7 @@ import express from 'express';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import {AdminModel} from '../model/admin.js';
-import { Validation } from '../validations/validation.js';
+import { Validation } from '../validation/validation.js';
 import sendEmail from '../utils/sendEmail.js';
 import { JWT } from '../config/env.js';
 export const authRoutes = express.Router();
