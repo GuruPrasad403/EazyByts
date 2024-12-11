@@ -1,0 +1,104 @@
+
+.parent{
+    position: relative;
+}
+.parent::before{
+    content: "";
+    position: absolute;
+    top:10%;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    border-bottom: 10px solid rgb(239, 162, 45);
+}
+.skillEffect {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.skillEffect::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 50%;
+    background: rgba(84, 68, 22, 0.654);
+    transition: all 0.7s ease;
+    opacity: 0;
+}
+
+.skillEffect:hover::before {
+    opacity: 1;
+}
+
+.percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5rem; /* Adjust font size as needed */
+    font-weight: bold;
+    z-index: 2; /* Make sure it appears above the background overlay */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Fade in effect */
+}
+
+.skillEffect:hover .percentage {
+    opacity: 1; /* Show on hover */
+}
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .card-enter {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  
+  .card-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .card-hover {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .card-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+/* Animations.css */
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+  .skillEffect {
+    transition: transform 0.3s ease-in-out;
+}
+
+.percentage {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better visibility */
+    border-radius: 50%; /* Ensures the percentage text is nicely rounded */
+    padding: 10px;
+}
+    
