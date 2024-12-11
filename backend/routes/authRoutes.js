@@ -5,8 +5,8 @@ import { AdminModel } from '../models/Admin.js';
 import { Validation } from '../validations/validation.js';
 import sendEmail from '../utils/sendEmail.js';
 import { JWT } from '../config/env.js';
-import GenerateOtp from '../utils/genrateOTP.js';
 export const authRoutes = express.Router();
+import GenerateOtp from '../utils/genrateOTP.js';
 
 // Default route
 authRoutes.get('/', (req, res) => {
