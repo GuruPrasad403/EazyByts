@@ -22,7 +22,7 @@ const VerifyOtp = () => {
 
     
       // Send POST request to verify OTP API
-      const response = await axios.put('http://localhost:3000/api/verify', { otp,email });
+      const response = await axios.put('https://eazy-byts-ten.vercel.app/api/verify', { otp,email });
 
       if (response.data.msg) {
         navigate('/signin');

@@ -12,7 +12,7 @@ const SkillManager = () => {
   useEffect(() => {
     const token = localStorage.getItem('token'); // Retrieve token from localStorage
 
-    axios.get('http://localhost:3000/api/skills', {
+    axios.get('https://eazy-byts-ten.vercel.app/api/skills', {
       headers: {
         Authorization: `Bearer ${token}` // Add token in Authorization header
       }
@@ -35,7 +35,7 @@ const SkillManager = () => {
 
     if (editingSkill) {
       // Update existing skill
-      axios.put(`http://localhost:3000/api/skills/${editingSkill._id}`, skillData, {
+      axios.put(`https://eazy-byts-ten.vercel.app/api/skills/${editingSkill._id}`, skillData, {
         headers: {
           Authorization: `Bearer ${token}` // Add token in Authorization header
         }
@@ -48,7 +48,7 @@ const SkillManager = () => {
         .catch((error) => console.error('Error updating skill:', error));
     } else {
       // Add new skill
-      axios.post('http://localhost:3000/api/skills', skillData, {
+      axios.post('https://eazy-byts-ten.vercel.app/api/skills', skillData, {
         headers: {
           Authorization: `Bearer ${token}` // Add token in Authorization header
         }
@@ -73,7 +73,7 @@ const SkillManager = () => {
   const handleDelete = (id) => {
     const token = localStorage.getItem('token'); // Retrieve token from localStorage
 
-    axios.delete(`http://localhost:3000/api/skills/${id}`, {
+    axios.delete(`https://eazy-byts-ten.vercel.app/api/skills/${id}`, {
       headers: {
         Authorization: `Bearer ${token}` // Add token in Authorization header
       }

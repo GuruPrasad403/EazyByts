@@ -26,7 +26,7 @@ const SignUp = () => {
     try {
       // Send POST request to the signup API
       console.log(email)
-      const response = await axios.post('http://localhost:3000/api/signup', {
+      const response = await axios.post('https://eazy-byts-ten.vercel.app/api/signup', {
         email,
         password,
       });

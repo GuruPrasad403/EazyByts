@@ -20,7 +20,7 @@ const SignIn = () => {
 
     try {
       // Send POST request to the signin API
-      const response = await axios.post('http://localhost:3000/api/signin', {
+      const response = await axios.post('https://eazy-byts-ten.vercel.app/api/signin', {
         email,
         password,
       });
@@ -78,10 +78,7 @@ const SignIn = () => {
           </button>
         </form>
 
-        <p className="mt-4 text-center">
-          Don't have an account?{' '}
-          <a href="/signup" className="text-blue-500 hover:underline">Sign Up</a>
-        </p>
+        
       </div>
     </div>
   );

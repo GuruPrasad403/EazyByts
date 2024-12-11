@@ -25,7 +25,7 @@ const BlogManager = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/blog', {
+      const response = await axios.get('https://eazy-byts-ten.vercel.app/api/blog', {
         headers: getAuthHeaders(), // Attach token here
       });
       setBlogs(response.data.blogs);
@@ -53,7 +53,7 @@ const BlogManager = () => {
 
     try {
       const newBlog = { title, content, author, tags, featuredImage, isPublished };
-      await axios.post('http://localhost:3000/api/blog', newBlog, {
+      await axios.post('https://eazy-byts-ten.vercel.app/api/blog', newBlog, {
         headers: getAuthHeaders(), // Attach token here
       });
       resetForm();
@@ -65,7 +65,7 @@ const BlogManager = () => {
 
   const editBlog = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/blog/${id}`, {
+      const response = await axios.get(`https://eazy-byts-ten.vercel.app/api/blog/${id}`, {
         headers: getAuthHeaders(), // Attach token here
       });
       const blog = response.data.blog;
@@ -86,7 +86,7 @@ const BlogManager = () => {
 
     try {
       const updatedBlog = { title, content, author, tags, featuredImage, isPublished };
-      await axios.put(`http://localhost:3000/api/blog/${editingBlogId}`, updatedBlog, {
+      await axios.put(`https://eazy-byts-ten.vercel.app/api/blog/${editingBlogId}`, updatedBlog, {
         headers: getAuthHeaders(), // Attach token here
       });
       resetForm();
@@ -98,7 +98,7 @@ const BlogManager = () => {
 
   const deleteBlog = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/blog/${id}`, {
+      await axios.delete(`https://eazy-byts-ten.vercel.app/api/blog/${id}`, {
         headers: getAuthHeaders(), // Attach token here
       });
       fetchBlogs(); // Refresh the list after deleting

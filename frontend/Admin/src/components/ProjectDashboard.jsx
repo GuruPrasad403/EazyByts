@@ -23,7 +23,7 @@ const ProjectDashboard = () => {
 
   const fetchProjects = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/project', {
+      const response = await axios.get('https://eazy-byts-ten.vercel.app/api/project', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -53,7 +53,7 @@ const ProjectDashboard = () => {
     try {
       let response;
       if (isEditing) {
-        response = await axios.put(`http://localhost:3000/api/project/${editId}`, formData, {
+        response = await axios.put(`https://eazy-byts-ten.vercel.app/api/project/${editId}`, formData, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -62,7 +62,7 @@ const ProjectDashboard = () => {
         setIsEditing(false);
         setEditId(null);
       } else {
-        response = await axios.post('http://localhost:3000/api/project', formData, {
+        response = await axios.post('https://eazy-byts-ten.vercel.app/api/project', formData, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

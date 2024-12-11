@@ -26,7 +26,7 @@ const User = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/users');
+        const response = await axios.get('https://eazy-byts-ten.vercel.app/api/users');
         console.log(response.data); // Log the response to see if it contains the expected user data
         if (response.data.users && response.data.users.length > 0) {
           const existingUser = response.data.users[0];
@@ -61,7 +61,7 @@ const User = () => {
     try {
       if (user) {
         // Update user if user exists
-        const response = await axios.put(`http://localhost:3000/api/user/${user._id}`, formData, {
+        const response = await axios.put(`https://eazy-byts-ten.vercel.app/api/user/${user._id}`, formData, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -70,7 +70,7 @@ const User = () => {
         setUser(response.data.user); // Set updated user data
       } else {
         // Add new user if no user exists
-        const response = await axios.post('http://localhost:3000/api/user', formData, {
+        const response = await axios.post('https://eazy-byts-ten.vercel.app/api/user', formData, {
           headers: {
             Authorization: `Bearer ${token}`
           }
