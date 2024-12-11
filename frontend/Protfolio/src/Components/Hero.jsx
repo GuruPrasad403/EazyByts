@@ -14,37 +14,45 @@ function HeroSection() {
   // Fetch user data from API
   useEffect(() => {
     const fetchUserData = async () => {
-      const token = localStorage.getItem('token'); // Get token from localStorage
-      if (token) {
-        try {
-          const response = await fetch('https://eazy-byts-ten.vercel.app/api/users', {
-            method: 'GET',
-            headers: {
-              'Authorization': `Bearer ${token}`, // Include the token in the request header
-            },
-          });
-          const data = await response.json();
-          setUserData(data.users[0]);
-          if (response.status) {
-            const data = await response.json();
-            setUserData(data.users[0]); // Assuming we're only fetching one user
-            setLoading(false); // Set loading to false after data is fetched
-          } else {
-            console.error('Failed to fetch user data');
-            setLoading(false);
-          }
-        } catch (error) {
-          console.error('Error fetching user data:', error);
-          setLoading(false);
-        }
-      } else {
+      const token = localStorage.getItem('token');
+      if (!token) {
         console.error('No token found');
+        setLoading(false);
+        return;
+      }
+  
+      try {
+        const response = await fetch('https://eazy-byts-ten.vercel.app/api/users', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+          },
+        });
+  
+        console.log('Response Status:', response.status);
+        const responseBody = await response.text();
+        console.log('Response Body:', responseBody);
+  
+        if (response.ok) { // Check if the status code is in the 200 range
+          const data = JSON.parse(responseBody); // Parse the text response into JSON
+          if (data.users && data.users.length > 0) {
+            setUserData(data.users[0]); // Update the state with user data
+          } else {
+            console.error('No users found in the response');
+          }
+        } else {
+          console.error('Failed to fetch user data. Status:', response.status);
+        }
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      } finally {
         setLoading(false);
       }
     };
-
+  
     fetchUserData();
   }, []);
+  
 
   // Disable body scroll when the navigation is open
   useEffect(() => {
