@@ -1,7 +1,7 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import { AdminModel } from '../models/Admin.js';
+import { AdminModel } from '../models/admin.js';
 import { Validation } from '../Validations/validation.js';
 import sendEmail from '../utils/sendEmail.js';
 import { JWT } from '../config/env.js';
