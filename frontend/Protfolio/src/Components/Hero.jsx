@@ -24,7 +24,7 @@ function HeroSection() {
             },
           });
 
-          if (response.json) {
+          if (response.status) {
             const data = await response.json();
             setUserData(data.users[0]); // Assuming we're only fetching one user
             setLoading(false); // Set loading to false after data is fetched
