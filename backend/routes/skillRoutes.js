@@ -1,6 +1,6 @@
 import express from 'express';
-import Skill from '../models/skill.js'; // Assuming Skill model is in 'models/Skill.js'
-import { skillValidationSchema } from '../Validations/skillValidation.js'; // Assuming Zod validation schema is in 'validation.js'
+import Skill from '../model/skill.js'; 
+import { skillValidationSchema } from '../Validations/skillValidation.js'; 
 
 const router = express.Router();
 

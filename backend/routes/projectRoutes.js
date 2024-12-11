@@ -1,5 +1,5 @@
 import express from 'express';
-import { ProjectModel } from '../models/project.js'; // Import the Project Model
+import { ProjectModel } from '../model/project.js'; // Import the Project Model
 import { projectValidationSchema } from '../Validations/projectValidation.js'; // Import the validation schema
 import { authentication } from '../middlewares/authentication.js'; // Assuming you have authentication middleware
 

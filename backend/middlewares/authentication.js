@@ -1,7 +1,6 @@
 import { JWT } from "../config/env.js";
 import jwt from "jsonwebtoken";
-import path from "path";
-import AdminModel from path.resolve("backend/models/admin.js");
+import {AdminModel} from '../model/admin.js';
 
 export const authentication = async (req, res, next) => {
     try {

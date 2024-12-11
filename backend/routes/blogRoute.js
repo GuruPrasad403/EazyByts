@@ -1,5 +1,5 @@
 import express from 'express';
-import { BlogModel } from '../models/blog.js';
+import { BlogModel } from '../model/blog.js';
 import { blogValidationSchema } from '../Validations/blogvalidation.js'; // Import the Zod schema for validation
 import { authentication } from '../middlewares/authentication.js'; // Assuming there's an authentication middleware
 
