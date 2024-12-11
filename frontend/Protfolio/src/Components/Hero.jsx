@@ -23,7 +23,8 @@ function HeroSection() {
               'Authorization': `Bearer ${token}`, // Include the token in the request header
             },
           });
-
+          const data = await response.json();
+          setUserData(data.users[0]);
           if (response.status) {
             const data = await response.json();
             setUserData(data.users[0]); // Assuming we're only fetching one user
