@@ -14,19 +14,11 @@ function HeroSection() {
   // Fetch user data from API
   useEffect(() => {
     const fetchUserData = async () => {
-      const token = localStorage.getItem('token');
-      if (!token) {
-        console.error('No token found');
-        setLoading(false);
-        return;
-      }
+      
   
       try {
         const response = await fetch('https://eazy-byts-ten.vercel.app/api/users', {
           method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${token}`,
-          },
         });
   
         console.log('Response Status:', response.status);
